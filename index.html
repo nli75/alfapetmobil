@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>irl-alfapet</title>
+		<style type="text/css" media="screen">@import "themes/css/apple.css";</style>
+		<style type="text/css" media="screen">@import "style.css";</style>
+		
+		<script src="src/lib/zepto.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="src/jqtouch.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="iphone.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="jqt">
+			<!--Homescreen-->
+			<div id="home" class="edgetoedge">				
+				<div class="toolbar">					
+					<h1>I.R.L.Alfapet</h1>
+				</div>				
+				<ul class="rounded">
+					<li>Spelare 1<a href="#icon" class="slideleft"></a></li>
+					<li>Spelare 2</li>
+				</ul>				
+				<a href="#game" class="button slideup">SPELA</a>	
+			</div>
+			<!--Chose profileicon-->
+			<div id="icon">
+				<div class="toolbar">
+					<h2>Välj profilbild</h2>
+				</div>
+				<form>
+					<ul>
+						<li><a href="#home" class="slideright">bild som ska ha logik</a></li>
+						<li><a href="#home" class="slideright">annan bild</a></li>
+					</ul>
+				</form>
+			</div>
+			<!--Gameboard-->
+			<div id="game">
+				<div id="statusbar">
+					<div id="player1">
+						<div id="icon_player1">bild</div>
+						<div id="score_player1">12</div>
+					</div>
+					<div id="tiles_left">42</div>
+					<div id="player2">
+						<div id="icon_player2">bild</div>
+						<div id="score_player2">21</div>
+					</div>
+				</div>
+				<div id="draw">SPELA gav 3 poäng</div>
+				<div id="board">rutnät</div>
+				<div id="tiles">
+					<div id="tile1" class="tile">A</div>
+					<div id="tile2" class="tile">D</div>
+					<div id="tile3" class="tile">M</div>
+					<div id="tile4" class="tile">F</div>
+					<div id="tile5" class="tile">S</div>
+					<div id="tile6" class="tile">Q</div>
+				</div>
+				<div id="game_options"></div>
+			</div>
+		</div>
+	</body>
+</html>
