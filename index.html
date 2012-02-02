@@ -51,27 +51,59 @@
 			</div>
 			<!--Gameboard-->
 			<div id="game">
-				<div id="statusbar">
-					<div id="player1">
-						<div id="icon_player1"><img src=""/></div>
-						<div id="score_player1">12</div>
+				<!--statusbar-->
+				<ul class="edgetoedge">
+					<li>
+						<div id="statusbar">
+							<div id="player1">
+								<div id="icon_player1"><img src=""/></div>
+								<div id="score_player1">12</div>
+							</div>
+							<div id="tiles_left">42</div>
+							<div id="player2">
+								<div id="icon_player2"><img src=""/></div>
+								<div id="score_player2">21</div>
+							</div>
+						</div>
+				</li>
+				</ul>
+				<!--draw-->
+				<ul class="edgetoedge">
+					<li id="draw">SPELA gav 3 poäng</li>
+				</ul>
+				<!--board-->
+				<div id="board" >
+					<div class="grid">
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
 					</div>
-					<div id="tiles_left">42</div>
-					<div id="player2">
-						<div id="icon_player2"><img src=""/></div>
-						<div id="score_player2">21</div>
+					<div class="grid">
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
 					</div>
+					<div class="grid">
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+						<div class="item"><small></small></div>
+					</div>						
 				</div>
-				<div id="draw">SPELA gav 3 poäng</div>
-				<div id="board">rutnät</div>
-				<div id="tiles">
-					<div id="tile1" class="tile">A</div>
-					<div id="tile2" class="tile">D</div>
-					<div id="tile3" class="tile">M</div>
-					<div id="tile4" class="tile">F</div>
-					<div id="tile5" class="tile">S</div>
-					<div id="tile6" class="tile">Q</div>
-				</div>
+				</li>
+				</ul>
+				<!--tiles-->
+					<div id="tiles">
+						<div id="tile1" class="tile">A</div>
+						<div id="tile2" class="tile">D</div>
+						<div id="tile3" class="tile">M</div>
+						<div id="tile4" class="tile">F</div>
+						<div id="tile5" class="tile">S</div>
+						<div id="tile6" class="tile">Q</div>
+					</div>
+				<!--options-->
 				<div id="game_options">
 					<button type="button" id="playpass">
 						?????
@@ -92,7 +124,7 @@
 					</a>
 				</div>
 			</div>
-			
+			<!--menu-->
 			<div id="gamemenu">
 				<a href="#game"  class="dissolve">
 				<button type="button">Fortsätt</button>
