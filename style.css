@@ -132,20 +132,18 @@
 }
 .item{
 	float: left;
-	border-bottom: 1px #000000 solid;
-	border-left: 1px #000000 solid;
+	border-bottom: 1px #FFFFFF solid;
+	border-left: 1px #FFFFFF solid;
 	height: 34px;
 	width: 39px;	
+	color: #000000;
+	background-color: #000000;
 }
 .tiles{
 	overflow: hidden;
 }
-.tiles li{
-	margin: 0px;
-	padding: 0px;
-}
 .tile{
-	width: 52px;
+	width: 51px;
 	height: 30px;
 	float: left;
 	border-bottom: 1px black solid;
@@ -154,7 +152,7 @@
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
-	border: 1px solid #800000;
+	border: 1px solid #000000;
 	overflow: hidden;
 }
 .tile div{
