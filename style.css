@@ -140,8 +140,12 @@
 .tiles{
 	overflow: hidden;
 }
+.tiles li{
+	margin: 0px;
+	padding: 0px;
+}
 .tile{
-	width: auto;
+	width: 52px;
 	height: 30px;
 	float: left;
 	border-bottom: 1px black solid;
@@ -156,4 +160,5 @@
 .tile div{
 	display: inline-block;
 	float: left;
+	width: auto;
 }
