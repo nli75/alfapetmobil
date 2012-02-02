@@ -72,66 +72,97 @@
 					<li id="draw">SPELA gav 3 poäng</li>
 				</ul>
 				<!--board-->
+				
 				<div id="board" >
 					<div class="grid">
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
 					</div>
 					<div class="grid">
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
 					</div>
 					<div class="grid">
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-						<div class="item"><small></small></div>
-					</div>						
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+					</div>	
+					<div class="grid">
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+					</div>								
 				</div>
-				</li>
-				</ul>
 				<!--tiles-->
-					<div id="tiles">
-						<div id="tile1" class="tile">A</div>
-						<div id="tile2" class="tile">D</div>
-						<div id="tile3" class="tile">M</div>
-						<div id="tile4" class="tile">F</div>
-						<div id="tile5" class="tile">S</div>
-						<div id="tile6" class="tile">Q</div>
-					</div>
+				<ul id="tiles" class="edgetoedge">
+					<li id="tile1" class="tile">
+						<div>A</div><div><small>2</small></div>
+					</li>
+					<li id="tile2" class="tile">
+						<div>B</div><div><small>3</small></div>
+					</li>
+					<li id="tile3" class="tile">
+						<div>N</div><div><small>5</small></div>
+					</li>
+					<li id="tile4" class="tile">
+						<div>B</div><div><small>6</small></div>						
+					</li>
+					<li id="tile5" class="tile">
+						<div>Q</div><div><small>1</small></div>
+					</li>
+					<li id="tile6" class="tile">
+						<div>M</div><div><small>1</small></div>
+					</li>
+				</ul>
 				<!--options-->
 				<div id="game_options">
 					<button type="button" id="playpass">
-						?????
+						LÄGG
 					</button>
 					
-					<div id="clearswap">
-						<button type="button" id="clear">
-							Rensa
-						</button>
-						<button type="button" id="swap">
-							Byt
-						</button>
-					</div>
+					
+					<button type="button" id="clear">
+						Rensa
+					</button>
+					<button type="button" id="swap">
+						Byt
+					</button>
+				
 					<a href="#gamemenu" class="dissolve">
 					<button type="button" id="gamemenubutton">
-					Meny
+						Meny
 					</button>	
 					</a>
 				</div>
 			</div>
 			<!--menu-->
 			<div id="gamemenu">
-				<a href="#game"  class="dissolve">
-				<button type="button">Fortsätt</button>
-				</a>
-				<a href="#home">
-				<button type="button">Nytt spel</button>
-				</a>
+				<ul class="rounded">
+					<li><a href="#game">Fortsätt</a></li>
+					<li><a href="#home">Nytt spel</a></li>
+				</ul>
 			</div>
 		</div>
 	</body>
