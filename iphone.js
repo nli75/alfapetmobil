@@ -109,11 +109,12 @@ $(function(){
 		  p1++;
 		 
 		};
-		//fyll brickor i frontend		
+		//fill tiles in html	
 		for (var i=0; i < 6; i++) {
 			 letter++;
-		 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);		 	 
-		};
+		 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);
+		 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 	 
+		};		
 		 
 		var p2 = 0;
 		for (var i=6; i < 11; i++) {
