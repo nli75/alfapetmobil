@@ -15,9 +15,23 @@
 				<div class="toolbar">					
 					<h1>I.R.L.Alfapet</h1>
 				</div>				
-				<ul class="rounded">
-					<li>Spelare 1<a href="#icon" class="slideleft"></a></li>
-					<li>Spelare 2</li>
+				<ul id="playerlist" class="rounded">
+					<li id="playerlist1">
+						<div class="playerlistname">
+							Spelare 1
+						</div>
+						<div class="playerlistimg">
+							<a href="#icon" class="slideleft"><img src="monkey.jpg" /></a>
+						</div>
+					</li>
+					<li id="playerlist2">
+						<div class="playerlistname">
+							Spelare 2
+						</div>
+						<div class="playerlistimg">
+							<a href="#icon" class="slideleft"><img src="monkey.jpg" /></a>
+						</div>
+					</li>
 				</ul>				
 				<a href="#game" class="button slideup">SPELA</a>	
 			</div>
@@ -27,9 +41,11 @@
 					<h2>Välj profilbild</h2>
 				</div>
 				<form>
-					<ul>
-						<li><a href="#home" class="slideright">bild som ska ha logik</a></li>
-						<li><a href="#home" class="slideright">annan bild</a></li>
+					<ul id="iconlist" class="individual">
+						<li><a href="#home" id="monkey" class="slideright"><img src="monkey.jpg" /></a></li>
+						<li><a href="#home" id="puppy" class="slideright"><img src="puppy.jpg" /></a></li>
+						<li><a href="#home" id="star" class="slideright"><img src="star.jpg" /></a></li>
+						<li><a href="#home" id="sun" class="slideright"><img src="sun.jpg" /></a></li>
 					</ul>
 				</form>
 			</div>
@@ -37,12 +53,12 @@
 			<div id="game">
 				<div id="statusbar">
 					<div id="player1">
-						<div id="icon_player1">bild</div>
+						<div id="icon_player1"><img src=""/></div>
 						<div id="score_player1">12</div>
 					</div>
 					<div id="tiles_left">42</div>
 					<div id="player2">
-						<div id="icon_player2">bild</div>
+						<div id="icon_player2"><img src=""/></div>
 						<div id="score_player2">21</div>
 					</div>
 				</div>
@@ -56,7 +72,34 @@
 					<div id="tile5" class="tile">S</div>
 					<div id="tile6" class="tile">Q</div>
 				</div>
-				<div id="game_options"></div>
+				<div id="game_options">
+					<button type="button" id="playpass">
+						?????
+					</button>
+					
+					<div id="clearswap">
+						<button type="button" id="clear">
+							Rensa
+						</button>
+						<button type="button" id="swap">
+							Byt
+						</button>
+					</div>
+					<a href="#gamemenu" class="dissolve">
+					<button type="button" id="gamemenubutton">
+					Meny
+					</button>	
+					</a>
+				</div>
+			</div>
+			
+			<div id="gamemenu">
+				<a href="#game"  class="dissolve">
+				<button type="button">Fortsätt</button>
+				</a>
+				<a href="#home">
+				<button type="button">Nytt spel</button>
+				</a>
 			</div>
 		</div>
 	</body>
