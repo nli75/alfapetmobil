@@ -93,17 +93,28 @@ var tiles = new Array();
 		tiles[68] = ["Ö","3"];
 		var bagOfTiles = tiles.shuffle();
 
+//fill one players bag of 5 tiles
+//Kom ihåg att ta bort dem från arrayen också
+//toggla mellan spelarna
 var player1Tiles = new Array;
 var player2Tiles = new Array;
 
 $(function(){
 	$('#gamestart').click( function(e){
 		var p1 = 0;
-		for (var i=0; i < 5; i++) {
+		var letter = 0;
+		for (var i=0; i < 6; i++) {
 		  
 		  player1Tiles[p1] = bagOfTiles[i];
 		  p1++;
+		 
 		};
+		//fyll brickor i frontend		
+		for (var i=0; i < 6; i++) {
+			 letter++;
+		 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);		 	 
+		};
+		 
 		var p2 = 0;
 		for (var i=6; i < 11; i++) {
 		  
@@ -112,7 +123,6 @@ $(function(){
 		};
 	});
 });
-
 
 
 //GET PLAYER ID FOR PROFILE PICTURE CHOICE
