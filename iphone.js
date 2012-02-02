@@ -94,7 +94,6 @@ var tiles = new Array();
 		var bagOfTiles = tiles.shuffle();
 
 //fill one players bag of 5 tiles
-//Kom ihåg att ta bort dem från arrayen också
 //toggla mellan spelarna
 var player1Tiles = new Array;
 var player2Tiles = new Array;

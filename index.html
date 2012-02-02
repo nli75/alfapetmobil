@@ -40,14 +40,16 @@
 				<div class="toolbar">
 					<h2>Välj profilbild</h2>
 				</div>
-				<form>
-					<ul id="iconlist" class="individual">
+				<div id="iconlist">
+					<ul class="individual">
 						<li><a href="#home" id="monkey" class="slideright"><img src="monkey.jpg" /></a></li>
 						<li><a href="#home" id="puppy" class="slideright"><img src="puppy.jpg" /></a></li>
+					</ul>
+					<ul class="individual">
 						<li><a href="#home" id="star" class="slideright"><img src="star.jpg" /></a></li>
 						<li><a href="#home" id="sun" class="slideright"><img src="sun.jpg" /></a></li>
 					</ul>
-				</form>
+				</div>
 			</div>
 			<!--Gameboard-->
 			<div id="game">
@@ -158,14 +160,14 @@
 						LÄGG
 					</button>
 					
-					
-					<button type="button" id="clear">
-						Rensa
-					</button>
-					<button type="button" id="swap">
-						Byt
-					</button>
-				
+					<div id="clearswap">
+						<button type="button" id="clear">
+							Rensa
+						</button>
+						<button type="button" id="swap">
+							Byt
+						</button>
+					</div>
 					<a href="#gamemenu" class="dissolve">
 					<button type="button" id="gamemenubutton">
 						Meny
