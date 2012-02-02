@@ -21,11 +21,7 @@ var database = openDatabase(databaseOptions.fileName, databaseOptions.version,
 
 var playerid;
 
-
-
-$(function(){
-	$('#gamestart').click( function(e){
-		var tiles = new Array();
+var tiles = new Array();
 		tiles[0] = ["A","1"];
 		tiles[1] = ["A","1"];
 		tiles[2] = ["A","1"];
@@ -96,10 +92,28 @@ $(function(){
 		tiles[67] = ["Ö","3"];
 		tiles[68] = ["Ö","3"];
 		var bagOfTiles = tiles.shuffle();
-		
-		console.log(bagOfTiles);
+
+var player1Tiles = new Array;
+var player2Tiles = new Array;
+
+$(function(){
+	$('#gamestart').click( function(e){
+		var p1 = 0;
+		for (var i=0; i < 5; i++) {
+		  
+		  player1Tiles[p1] = bagOfTiles[i];
+		  p1++;
+		};
+		var p2 = 0;
+		for (var i=6; i < 11; i++) {
+		  
+		  player2Tiles[p2] = bagOfTiles[i];
+		  p2++;
+		};
 	});
 });
+
+
 
 //GET PLAYER ID FOR PROFILE PICTURE CHOICE
 $(function(){
@@ -122,5 +136,6 @@ $(function(){
 $(function(){
 	$('#tiles div').click( function(e){
 		var letterTile = $(this).attr('id');
+		
 	});
 });
