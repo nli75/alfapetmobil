@@ -1,13 +1,37 @@
 #player1, #player2{
 	border: 1px black solid;
 	height: 40%;
-	width: 35%;
+	width: 30%;
 	float: left;
 	overflow: hidden;
 }
 
 #player2{
 	float: right;
+}
+
+#player2 div{
+	float: right;
+}
+
+#player1 div{
+	float: left;
+}
+
+#score_player1{
+	font-size: 25px;
+}
+
+#score_player2{
+	font-size: 25px;
+}
+
+#icon_player1 img, #icon_player2 img{
+	height: 35px;
+	width: 35px;
+	border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px;
 }
 
 #monkey, #puppy, #star, #sun{
@@ -96,12 +120,10 @@
 	
 }
 #board{
-	background-color: #000000;
-	width: 100%;
-	height: 100%;
-	color: #FFFFFF;
 	
 }
+
+
 .tile{
 	width: 5%;
 	height: 50px;
