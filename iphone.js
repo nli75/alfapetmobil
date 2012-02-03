@@ -128,42 +128,58 @@ $(function(){
 		  player2Tiles[p2] = bagOfTiles[i];
 		  p2++;
 		};
+		statusPlayer1 = 0;
 	});
 });
 
 //when LÄGG is clicked switch turn
+//obs. första gången måste man klicka två gånger
 $(function(){
 	$('#playpass').click( function(e){
 		switch(statusPlayer1){
 			
-			case 0 : console.log("plaer 1 lägger sitt drag");
+			case 0 : 
 					statusPlayer1 = 1;
 					statusPlayer2 = 0;
-					console.log(statusPlayer1);
+				
 					//put his bag into html
 					for (var i=0; i < 6; i++) {
 						 letter++;
 					 	 $("#tile" + letter + " div:first-child").html(player2Tiles[i][0]);
 					 	 $("#tile" + letter + " div:last-child small").html(player2Tiles[i][1]); 
-					 	 console.log(player2Tiles); 
+					 	
 					};
-					letter = 0;	 	
+					letter = 0;	
 					break;
 				
-				case 1 : console.log("player 1 turn");
+			case 1 : 
 					statusPlayer1 = 0;
 					statusPlayer2 = 1;
-					console.log(statusPlayer1);
+					
 					//put his bag into html
 					for (var i=0; i < 6; i++) {
 						 letter++;
 					 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);
-					 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 	 
+					 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 
+					 	 
 					};	
-					letter = 0;
-					console.log(player1Tiles); 					
+					letter = 0;			
 					break;
 		};
+	});
+});
+
+//När jag klickar på en bokstav läggs den ut på brädet i html och försvinner från min påse
+$(function(){
+	$('.tile').click(function(e){
+		var content = $(this).html();
+		$(this).remove();
+		$('.item').click(function(e){
+			$(this).html(content);
+				
+		});
+		
+		console.log(content);
 	});
 });
 
