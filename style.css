@@ -145,6 +145,19 @@
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
 }
+.tile_on_board{
+	width: 37px;
+	height: 32px;
+	float: left;
+	border-bottom: 1px black solid;
+	border-left: 1px black solid;
+	background-color: #FFFFFF;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 1px solid #000000;
+	overflow: hidden;
+}
 .tiles{
 	overflow: hidden;
 }
@@ -161,16 +174,16 @@
 	border: 1px solid #000000;
 	overflow: hidden;
 }
-.tile div{
+.tile div, .tile_on_board div{
 	display: inline-block;
 	float: left;
 	width: auto;
 }
-.tile div:first-child{
+.tile div:first-child, .tile_on_board div:first-child{
 	font-size: 20px;
 	margin: 4px;
 }
-.tile div:last-child{
+.tile div:last-child, .tile_on_board div:last-child{
 	display: inline-block;
 	float: right;
 	font-size: 11px;
