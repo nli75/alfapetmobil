@@ -91,15 +91,18 @@ var tiles = new Array();
 		tiles[66] = ["Ä","4"];
 		tiles[67] = ["Ö","3"];
 		tiles[68] = ["Ö","3"];
-		var bagOfTiles = tiles.shuffle();
+		
+		
 
 //fill one players bag of 5 tiles
 //toggla mellan spelarna
+
 var player1Tiles = new Array;
 var player2Tiles = new Array;
 
 $(function(){
 	$('#gamestart').click( function(e){
+		var bagOfTiles = tiles.shuffle();
 		var p1 = 0;
 		var letter = 0;
 		for (var i=0; i < 6; i++) {
@@ -121,6 +124,8 @@ $(function(){
 		  player2Tiles[p2] = bagOfTiles[i];
 		  p2++;
 		};
+		
+		
 	});
 });
 
