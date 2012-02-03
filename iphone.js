@@ -2,6 +2,11 @@ var jQT = $.jQTouch({
 	
 });
 
+//members
+var letter = 0;
+var statusPlayer1 = 1;
+var statusPlayer2 = 0;
+
 Array.prototype.shuffle = function() {
 	var s = [];
 	while (this.length) s.push(this.splice(Math.random() * this.length, 1)[0]);
@@ -91,20 +96,19 @@ var tiles = new Array();
 		tiles[66] = ["Ä","4"];
 		tiles[67] = ["Ö","3"];
 		tiles[68] = ["Ö","3"];
-		
-		
 
-//fill one players bag of 5 tiles
+
 //toggla mellan spelarna
 
 var player1Tiles = new Array;
 var player2Tiles = new Array;
 
+//fill players bag of 6 tiles when game start
 $(function(){
 	$('#gamestart').click( function(e){
 		var bagOfTiles = tiles.shuffle();
 		var p1 = 0;
-		var letter = 0;
+		
 		for (var i=0; i < 6; i++) {
 		  
 		  player1Tiles[p1] = bagOfTiles[i];
@@ -116,16 +120,68 @@ $(function(){
 			 letter++;
 		 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);
 		 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 	 
-		};		
+		};
 		 
 		var p2 = 0;
-		for (var i=6; i < 11; i++) {
+		for (var i=6; i < 12; i++) {
 		  
 		  player2Tiles[p2] = bagOfTiles[i];
 		  p2++;
 		};
+
+		statusPlayer1 = 0;
+	});
+});
+
+//when LÄGG is clicked switch turn
+//obs. första gången måste man klicka två gånger
+$(function(){
+	$('#playpass').click( function(e){
+		switch(statusPlayer1){
+			
+			case 0 : 
+					statusPlayer1 = 1;
+					statusPlayer2 = 0;
+				
+					//put his bag into html
+					for (var i=0; i < 6; i++) {
+						 letter++;
+					 	 $("#tile" + letter + " div:first-child").html(player2Tiles[i][0]);
+					 	 $("#tile" + letter + " div:last-child small").html(player2Tiles[i][1]); 
+					 	
+					};
+					letter = 0;	
+					break;
+				
+			case 1 : 
+					statusPlayer1 = 0;
+					statusPlayer2 = 1;
+					
+					//put his bag into html
+					for (var i=0; i < 6; i++) {
+						 letter++;
+					 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);
+					 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 
+					 	 
+					};	
+					letter = 0;			
+					break;
+		};
+	});
+});
+
+//När jag klickar på en bokstav läggs den ut på brädet i html och försvinner från min påse
+$(function(){
+	$('.tile').click(function(e){
+		var content = $(this).html();
+		$(this).remove();
+		$('.item').click(function(e){
+			$(this).html(content);
+				
+		});
 		
-		
+		console.log(content);
+
 	});
 });
 
