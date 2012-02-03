@@ -131,16 +131,19 @@
 .grid{
 	float: none;
 	overflow: hidden;
-	width: auto;	
+	width: auto;
+	background-color: #000000;	
 }
 .item{
 	float: left;
-	border-bottom: 1px #FFFFFF solid;
-	border-left: 1px #FFFFFF solid;
+	border-bottom: 1px #000000 solid;
+	border-left: 1px #000000 solid;
 	height: 34px;
 	width: 39px;	
 	color: #000000;
-	background-color: #000000;
+	background-color: #333333;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
 }
 .tiles{
 	overflow: hidden;
