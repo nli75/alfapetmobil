@@ -53,39 +53,40 @@
 #game_options{
 	width:100%;
 	background-color: gray;
+	border: 1px #000000 solid;
+	background-color: #8C8C8C;
 }
 
-#game_options div.button{
-	overflow: hidden;
+#game_options div:first-child{
+	margin-right: 40px; 
 }
-
-#playpass{
-	display: inline-block;
-	float: left;
-	border-left: 1px solid black;
-	position: relative;
-}
-
-#clearswap{
-	display: inline-block;
-	position: fixed;
-	border-left: 1px solid black;
-	position: relative;
-}
-
-#clear{
-	display: inline-block;
-}
-
-#swap{
-	display: inline-block;
-}
-
-#gamemenubutton{
-	display: inline-block;
+#game_options div:last-child{
+	margin-left: 20px;
 	float: right;
-	border-left: 1px solid black;
-	position: relative;
+}
+#game_options div{
+	float: left;	
+    text-align: center;
+    line-height: 28px;
+    color: #000000;
+    text-shadow: rgba(0,0,0,0.6) 0px -1px 0px;
+    top: 7px;
+    left: 6px;
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-width: 0 10px 0 10px;
+    -webkit-border-image: url(img/whiteButton.png) 10 15 10 10;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#game_options div:active {
+    -webkit-border-image: url(img/grayButton.png) 0 8 0 14;
+    color: #FFFFFF;
+}
+#game_options div a{
+	 text-decoration: none;
+	 color: #000000;
 }
 
 .playerlistimg img{
@@ -116,9 +117,16 @@
 	text-align:center;
 	overflow: hidden;
 }
+
 #draw{
-	background-color: #8C8C8C;
+	background-color: #000000;
 	color: #FFFFFF;	
+	height: 15px;
+	padding: 2px 2px 2px 20px;
+	text-align: center;
+}
+#draw span{
+	font-size: 60%;
 }
 #board{
 	background-color: #FFFFFF;
