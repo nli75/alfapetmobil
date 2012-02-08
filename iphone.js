@@ -175,9 +175,10 @@ $(function(){
 	$('.tile').click(function(e){
 		var content = $(this).html();
 		$(this).remove();
+		//loopa igenom min påse och ta bort den första av mig du hittar
 		$('.item').click(function(e){
-			$(this).html(content);
-				
+			var thisdraw = $(this).html(content).addClass('tile_on_board');
+				console.log(thisdraw);
 		});
 		
 		console.log(content);
