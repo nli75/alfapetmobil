@@ -22,7 +22,7 @@
 							Spelare 1
 						</div>
 						<div class="playerlistimg">
-							<a href="#icon" class="slideleft"><img src="monkey.jpg" /></a>
+							<a href="#icon" class="slideleft"><img src="img/icon/monkey.jpg" /></a>
 						</div>
 					</li>
 					<li id="playerlist2">
@@ -30,52 +30,60 @@
 							Spelare 2
 						</div>
 						<div class="playerlistimg">
-							<a href="#icon" class="slideleft"><img src="monkey.jpg" /></a>
+							<a href="#icon" class="slideleft"><img src="img/icon/monkey.jpg" /></a>
 						</div>
 					</li>
 				</ul>				
-				<a href="#game" class="button slideup" id="gamestart">SPELA</a>	
+				<div id="gamestart">
+					<a href="#game" class="slideup">SPELA</a>					
+				</div>
 			</div>
 			<!--Chose profileicon-->
 			<div id="icon">
 				<div class="toolbar">
-					<a href="#home" class="button goback">Back</a>
+					<div><a href="#home" class="back">Back</a></div>
 					<h1>Välj profilbild</h1>
 				</div>
 				<div id="iconlist">
 					<ul class="individual">
-						<li><a href="#home" id="monkey" class="slideright"><img src="monkey.jpg" /></a></li>
-						<li><a href="#home" id="puppy" class="slideright"><img src="puppy.jpg" /></a></li>
+						<li><a href="#home" id="monkey" class="slideright"><img src="img/icon/monkey.jpg" /></a></li>
+						<li><a href="#home" id="puppy" class="slideright"><img src="img/icon/puppy.jpg" /></a></li>
 					</ul>
 					<ul class="individual">
-						<li><a href="#home" id="star" class="slideright"><img src="star.jpg" /></a></li>
-						<li><a href="#home" id="sun" class="slideright"><img src="sun.jpg" /></a></li>
+						<li><a href="#home" id="star" class="slideright"><img src="img/icon/star.jpg" /></a></li>
+						<li><a href="#home" id="sun" class="slideright"><img src="img/icon/sun.jpg" /></a></li>
 					</ul>
 				</div>
 			</div>
 			<!--Gameboard-->
 			<div id="game">
+				<div class="toolbar">
+					<div><a href="#home" class="back">Back</a></div>
+				</div>
 				<!--statusbar-->
-				<ul class="edgetoedge">
-					<li>
-						<div id="statusbar">
-							<div id="player1">
-								<div id="icon_player1"><img src=""/></div>
-								<div id="score_player1">12</div>
+				<div id="status_list">
+					<ul class="edgetoedge">
+						<li>
+							<div id="statusbar">
+								<div id="player1">
+									<div id="icon_player1"><img src=""/></div>
+									<div id="score_player1">12</div>
+								</div>
+								<div id="tiles_left">42</div>
+								<div id="player2">
+									<div id="icon_player2"><img src=""/></div>
+									<div id="score_player2">21</div>
+								</div>
 							</div>
-							<div id="tiles_left">42</div>
-							<div id="player2">
-								<div id="icon_player2"><img src=""/></div>
-								<div id="score_player2">21</div>
-							</div>
-						</div>
-				</li>
-				</ul>
+						</li>
+					</ul>
+				</div>
 				<!--draw-->
-				<ul class="edgetoedge">
-					<li id="draw"><span>ILLER gav 3 poäng</span></li>
-				</ul>
-				<!--board-->				
+				<div class="edgetoedge" id="draw">
+					<span>ILLER gav 3 poäng</span>
+				</div>
+				<!--board-->
+				
 				<div id="board" >
 					<div class="grid">
 						<div class="item"></div>
