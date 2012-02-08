@@ -4,8 +4,8 @@ var jQT = $.jQTouch({
 
 //members
 var letter = 0;
-var statusPlayer1 = 1;
-var statusPlayer2 = 0;
+var statusPlayer1 = 0;
+var statusPlayer2 = 1;
 
 Array.prototype.shuffle = function() {
 	var s = [];
@@ -141,7 +141,7 @@ $(function(){
 			case 0 : 
 					statusPlayer1 = 1;
 					statusPlayer2 = 0;
-				
+					
 					//put his bag into html
 					for (var i=0; i < 6; i++) {
 						 letter++;
