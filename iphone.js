@@ -143,8 +143,8 @@ $(function(){
 				
 					for (var i=0; i < 6; i++) {
 						 letter++;
-					 	 $("#tile1" + letter + " div:first-child").html(player2Tiles[i][0]);
-					 	 $("#tile1" + letter + " div:last-child small").html(player2Tiles[i][1]); 
+					 	 $("#tile1" + letter + " div:first-child").html(player1Tiles[i][0]);
+					 	 $("#tile1" + letter + " div:last-child small").html(player1Tiles[i][1]); 
 					 	 
 					};
 					
@@ -160,8 +160,8 @@ $(function(){
 					
 					for (var i=0; i < 6; i++) {
 						 letter++;
-					 	 $("#tile2" + letter + " div:first-child").html(player1Tiles[i][0]);
-					 	 $("#tile2" + letter + " div:last-child small").html(player1Tiles[i][1]); 
+					 	 $("#tile2" + letter + " div:first-child").html(player2Tiles[i][0]);
+					 	 $("#tile2" + letter + " div:last-child small").html(player2Tiles[i][1]); 
 					 	 
 					};	
 					letter = 0;			
@@ -189,17 +189,17 @@ $(function(){
 	});
 });
 
-$(function removeTiles(removedTile){
-	var tilesPlayed = new Array();
+//$(function removeTiles(removedTile){
+//	var tilesPlayed = new Array();
 	
-	var tileLetter = removedTile.substr(0,1);
-	var tileValue = removedTile.substr(1,2);
+//	var tileLetter = removedTile.substr(0,1);
+//	var tileValue = removedTile.substr(1,2);
 	
-	console.log(tileLetter);
-	console.log(tileValue);
+//	console.log(tileLetter);
+//	console.log(tileValue);
 	
 	
-});
+//});
 
 //GET PLAYER ID FOR PROFILE PICTURE CHOICE
 $(function(){
