@@ -196,7 +196,9 @@ $(function(){
 //SET PROFILE PICTURES IN PRE-GAME MENU AND IN THE MAIN GAME SCREEN
 $(function(){
      $('#iconlist li a').click( function(e){
-        var icon = $(this).attr('id')+'.jpg';
+        var icon ='img/icon/' + $(this).attr('id')+'.jpg';
+        
+        console.log(icon);
         
         $('#playerlist'+playerid+' a img').attr('src', icon);
         $('#icon_player'+playerid+' img').attr('src', icon);
