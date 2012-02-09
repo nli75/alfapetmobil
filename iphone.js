@@ -4,27 +4,11 @@ var jQT = $.jQTouch({
 
 //members
 var letter = 0;
-var statusPlayer1 = 0;
-var statusPlayer2 = 1;
-
-Array.prototype.shuffle = function() {
-	var s = [];
-	while (this.length) s.push(this.splice(Math.random() * this.length, 1)[0]);
-	while (s.length) this.push(s.pop());
-	return this;
-}
-
-var databaseOptions = {
-	fileName : 'alfapet_database',
-	version : "1.0",
-	displayName : "alfapetDB",
-	maxSize : 1024
-}
-
-var database = openDatabase(databaseOptions.fileName, databaseOptions.version,
-							databaseOptions.displayName, databaseOptions.maxSize);
-
 var playerid;
+var tilesUsed = 0;
+var player1Tiles = new Array;
+var player2Tiles = new Array;
+var removedTile;
 
 var tiles = new Array();
 		tiles[0] = ["A","1"];
@@ -97,13 +81,15 @@ var tiles = new Array();
 		tiles[67] = ["Ö","3"];
 		tiles[68] = ["Ö","3"];
 
+//RANDOMIZE THE ARRAY OF LETTERS
+Array.prototype.shuffle = function() {
+	var s = [];
+	while (this.length) s.push(this.splice(Math.random() * this.length, 1)[0]);
+	while (s.length) this.push(s.pop());
+	return this;
+}
 
-//toggla mellan spelarna
-
-var player1Tiles = new Array;
-var player2Tiles = new Array;
-
-//fill players bag of 6 tiles when game start
+//ON GAMESTART GIVE EACH PLAYER 6 LETTERS FROM THE bagOfTiles VARIABLE
 $(function(){
 	$('#gamestart').click( function(e){
 		var bagOfTiles = tiles.shuffle();
@@ -115,53 +101,67 @@ $(function(){
 		  p1++;
 		 
 		};
-		//fill tiles in html	
+		
 		for (var i=0; i < 6; i++) {
 			 letter++;
-		 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);
-		 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 	 
+		 	 $("#tile1" + letter + " div:first-child").html(player1Tiles[i][0]);
+		 	 $("#tile1" + letter + " div:last-child small").html(player1Tiles[i][1]); 	 
 		};
-		 
+		letter = 0;
+		
 		var p2 = 0;
 		for (var i=6; i < 12; i++) {
 		  
 		  player2Tiles[p2] = bagOfTiles[i];
 		  p2++;
 		};
-
+		for (var i=0; i < 6; i++) {
+			 letter++;
+		 	 $("#tile2" + letter + " div:first-child").html(player2Tiles[i][0]);
+		 	 $("#tile2" + letter + " div:last-child small").html(player2Tiles[i][1]); 	 
+		};
 		statusPlayer1 = 0;
+		letter = 0;
 	});
 });
 
-//when LÄGG is clicked switch turn
-//obs. första gången måste man klicka två gånger
+//WHEN "LÄGG" IS CLICKED SWITCH PLAYER TURNS
 $(function(){
+	var statusPlayer1 = 1;
+	var statusPlayer2 = 0;
 	$('#playpass').click( function(e){
+		
 		switch(statusPlayer1){
 			
+			
 			case 0 : 
+					$('#player1tiles').css('display', 'block');
+					$('#player2tiles').css('display', 'none');
+					
 					statusPlayer1 = 1;
 					statusPlayer2 = 0;
-					
-					//put his bag into html
+				
 					for (var i=0; i < 6; i++) {
 						 letter++;
-					 	 $("#tile" + letter + " div:first-child").html(player2Tiles[i][0]);
-					 	 $("#tile" + letter + " div:last-child small").html(player2Tiles[i][1]); 
-					 	
+					 	 $("#tile1" + letter + " div:first-child").html(player2Tiles[i][0]);
+					 	 $("#tile1" + letter + " div:last-child small").html(player2Tiles[i][1]); 
+					 	 
 					};
-					letter = 0;	
+					
+					letter = 0;
 					break;
 				
 			case 1 : 
+					
+					$('#player2tiles').css('display', 'block');
+					$('#player1tiles').css('display', 'none');
 					statusPlayer1 = 0;
 					statusPlayer2 = 1;
 					
-					//put his bag into html
 					for (var i=0; i < 6; i++) {
 						 letter++;
-					 	 $("#tile" + letter + " div:first-child").html(player1Tiles[i][0]);
-					 	 $("#tile" + letter + " div:last-child small").html(player1Tiles[i][1]); 
+					 	 $("#tile2" + letter + " div:first-child").html(player1Tiles[i][0]);
+					 	 $("#tile2" + letter + " div:last-child small").html(player1Tiles[i][1]); 
 					 	 
 					};	
 					letter = 0;			
@@ -170,15 +170,18 @@ $(function(){
 	});
 });
 
-//När jag klickar på en bokstav läggs den ut på brädet i html och försvinner från min påse
+//WHEN I CLICK ON A LETTER IT SHOULD DISAPPEAR FROM MY ROW AND WHEN I CLICK A BLOCK ON THE PLAY FIELD
+//IT SHOULD BE PLACED THERE
+//BROKEN FUNCTION. PROBABLY MISSING FUNCTIONALITY AND NOT A BUG, A LETTER CAN BE PLACED MULTIPLE TIMES
 $(function(){
 	$('.tile').click(function(e){
+		
 		var content = $(this).html();
 		$(this).remove();
-		//loopa igenom min påse och ta bort den första av mig du hittar
+		
 		$('.item').click(function(e){
 			var thisdraw = $(this).html(content).addClass('tile_on_board');
-				console.log(thisdraw);
+			tilesUsed+1;
 		});
 		
 		console.log(content);
@@ -186,6 +189,17 @@ $(function(){
 	});
 });
 
+$(function removeTiles(removedTile){
+	var tilesPlayed = new Array();
+	
+	var tileLetter = removedTile.substr(0,1);
+	var tileValue = removedTile.substr(1,2);
+	
+	console.log(tileLetter);
+	console.log(tileValue);
+	
+	
+});
 
 //GET PLAYER ID FOR PROFILE PICTURE CHOICE
 $(function(){
@@ -203,11 +217,4 @@ $(function(){
         $('#playerlist'+playerid+' a img').attr('src', icon);
         $('#icon_player'+playerid+' img').attr('src', icon);
 	  });
-});
-
-$(function(){
-	$('#tiles div').click( function(e){
-		var letterTile = $(this).attr('id');
-		
-	});
 });

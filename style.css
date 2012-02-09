@@ -6,6 +6,14 @@
 	overflow: hidden;
 }
 
+#player1tiles{
+	display: block;
+}
+
+#player2tiles{
+	display: none;
+}
+
 #player2{
 	float: right;
 }
