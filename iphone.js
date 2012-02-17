@@ -138,6 +138,9 @@ $(function(){
 					$('#player1tiles').css('display', 'block');
 					$('#player2tiles').css('display', 'none');
 					
+					$('#player1').css('border-color', 'yellow');
+					$('#player2').css('border-color', 'black');
+					
 					statusPlayer1 = 1;
 					statusPlayer2 = 0;
 				
@@ -155,6 +158,9 @@ $(function(){
 					
 					$('#player2tiles').css('display', 'block');
 					$('#player1tiles').css('display', 'none');
+					
+					$('#player2').css('border-color', 'yellow');
+					$('#player1').css('border-color', 'black');
 					statusPlayer1 = 0;
 					statusPlayer2 = 1;
 					

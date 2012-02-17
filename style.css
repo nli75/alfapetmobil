@@ -71,7 +71,6 @@
 	font-size: 28px;
 }
 #player1, #player2{
-	border: 1px black solid;
 	height: 37px;
 	width: auto;
 	float: left;
@@ -89,6 +88,9 @@
 
 #player2{
 	float: right;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
 }
 
 #player2 div{
@@ -99,12 +101,29 @@
 	float: left;
 }
 
+#player1{
+	border: 1px;
+	border-style: solid;
+	border-color: yellow;
+}
+
+
 #score_player1{
 	font-size: 14px;
 }
 
 #score_player2{
 	font-size: 14px;
+}
+
+#icon_player1{
+	border: 2px;
+	border-color: yellow;
+}
+
+#icon_player2{
+	border: 2px;
+	border-color: ;
 }
 
 #icon_player1 img, #icon_player2 img{
